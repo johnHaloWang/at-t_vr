@@ -142,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
         center.setParent(base);
         center.setLocalPosition(new Vector3(0.0f, 0.5f, -0.5f));
 
+        //menu1
         Node obj1 = new Node();
         obj1.setParent(center);
         obj1.setRenderable(tophatRenderable);
@@ -153,6 +154,30 @@ public class MainActivity extends AppCompatActivity {
         menu1.setParent(center);
         menu1.setRenderable(menu1Renderable);
         menu1.setLocalPosition(new Vector3(0.0f, -0.3f, 0.0f));
+
+        // menu2
+        Node obj2 = new Node();
+        obj2.setParent(center);
+        obj2.setRenderable(tophatRenderable);
+        obj2.setLocalPosition(new Vector3(-1.5f, 0.5f, 0.0f));
+        obj2.setLocalScale(new Vector3(0.5f, 0.5f, 0.5f));
+
+        Node menu2 = new Node();
+        menu2.setParent(center);
+        menu2.setRenderable(menu1Renderable);
+        menu2.setLocalPosition(new Vector3(-1.5f, -0.3f, 0.0f));
+
+        // menu3
+        Node obj3 = new Node();
+        obj3.setParent(center);
+        obj3.setRenderable(tophatRenderable);
+        obj3.setLocalPosition(new Vector3(1.5f, 0.5f, 0.0f));
+        obj3.setLocalScale(new Vector3(0.5f, 0.5f, 0.5f));
+
+        Node menu3 = new Node();
+        menu3.setParent(center);
+        menu3.setRenderable(menu1Renderable);
+        menu3.setLocalPosition(new Vector3(1.5f, -0.3f, 0.0f));
 
         // listener to seekbar
 //        View solarControlsView = menu1Renderable.getView();
