@@ -41,3 +41,8 @@ sceneform.asset('sampledata/andy.obj',
         'default',
         'sampledata/andy.sfa',
         'src/main/res/raw/andy')
+
+sceneform.asset('sampledata/top hat.obj',
+        'default',
+        'sampledata/top hat.sfa',
+        'src/main/res/raw/top_hat')

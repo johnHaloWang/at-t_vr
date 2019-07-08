@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private ArFragment arFragment;
 
     private ModelRenderable andyRenderable;
+    private ModelRenderable tophatRenderable;
     private ViewRenderable menu1Renderable;
 
     private boolean hasPlacedMenu = false;
@@ -50,12 +51,14 @@ public class MainActivity extends AppCompatActivity {
 
         CompletableFuture<ModelRenderable> andyStage =
                 ModelRenderable.builder().setSource(this, R.raw.andy).build();
-
+        CompletableFuture<ModelRenderable> tophatStage =
+                ModelRenderable.builder().setSource(this, R.raw.top_hat).build();
         CompletableFuture<ViewRenderable> menu1Stage =
                 ViewRenderable.builder().setView(this, R.layout.menu1).build();
 
         CompletableFuture.allOf(
                 andyStage,
+                tophatStage,
                 menu1Stage)
                 .handle(
                         (notUsed, throwable) -> {
@@ -70,7 +73,14 @@ public class MainActivity extends AppCompatActivity {
 
                             try {
                                 andyRenderable = andyStage.get();
+                                tophatRenderable = tophatStage.get();
                                 menu1Renderable = menu1Stage.get();
+
+                                // edit renderables
+                                tophatRenderable.setShadowCaster(false);
+                                tophatRenderable.setShadowReceiver(false);
+                                menu1Renderable.setShadowCaster(false);
+                                menu1Renderable.setShadowReceiver(false);
 
                                 // Everything finished loading successfully.
                                 hasFinishedLoading = true;
@@ -130,17 +140,19 @@ public class MainActivity extends AppCompatActivity {
 
         Node center = new Node();
         center.setParent(base);
-        center.setLocalPosition(new Vector3(0.0f, 0.5f, 0.0f));
+        center.setLocalPosition(new Vector3(0.0f, 0.5f, -0.5f));
 
-        Node andyObject = new Node();
-        andyObject.setParent(center);
-        andyObject.setRenderable(andyRenderable);
-        andyObject.setLocalScale(new Vector3(0.5f, 0.5f, 0.5f));
+        Node obj1 = new Node();
+        obj1.setParent(center);
+        obj1.setRenderable(tophatRenderable);
+        obj1.setLocalPosition(new Vector3(0.0f, 0.25f, 0.0f));
+        obj1.setLocalScale(new Vector3(0.5f, 0.5f, 0.5f));
+        // might use setLocalScale, or just use transformablenode for obj
 
         Node menu1 = new Node();
         menu1.setParent(center);
         menu1.setRenderable(menu1Renderable);
-        menu1.setLocalPosition(new Vector3(0.0f, 0.25f, 0.0f));
+        menu1.setLocalPosition(new Vector3(0.0f, -0.25f, 0.0f));
 
         // listener to seekbar
 //        View solarControlsView = menu1Renderable.getView();

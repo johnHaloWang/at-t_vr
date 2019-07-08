@@ -26,29 +26,31 @@
 
     <TextView
         android:id="@+id/orbitHeader"
+        android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Orbit Speed:"
+        android:text="$10 \nTop Hat "
+        android:background="@drawable/rounded_bg"
         android:textAlignment="center" />
 
-    <SeekBar
-        android:id="@+id/orbitSpeedBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp" />
+    <!--<SeekBar-->
+        <!--android:id="@+id/orbitSpeedBar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:padding="4dp" />-->
 
-    <TextView
-        android:id="@+id/rotationHeader"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Rotation Speed:"
-        android:textAlignment="center"
-        android:paddingTop="2dp" />
+    <!--<TextView-->
+        <!--android:id="@+id/rotationHeader"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Rotation Speed:"-->
+        <!--android:textAlignment="center"-->
+        <!--android:paddingTop="2dp" />-->
 
-    <SeekBar
-        android:id="@+id/rotationSpeedBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp" />
+    <!--<SeekBar-->
+        <!--android:id="@+id/rotationSpeedBar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:padding="4dp" />-->
 
 </LinearLayout>
