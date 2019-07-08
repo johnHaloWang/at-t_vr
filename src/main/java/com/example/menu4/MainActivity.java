@@ -48,14 +48,14 @@ public class MainActivity extends AppCompatActivity {
 
         // Build Renderables
 
-//        CompletableFuture<ModelRenderable> andyStage =
-//                ModelRenderable.builder().setSource(this, Uri.parse(new File("res/raw/andy.sfb").toString())).build();
+        CompletableFuture<ModelRenderable> andyStage =
+                ModelRenderable.builder().setSource(this, R.raw.andy).build();
 
         CompletableFuture<ViewRenderable> menu1Stage =
                 ViewRenderable.builder().setView(this, R.layout.menu1).build();
 
         CompletableFuture.allOf(
-//                andyStage,
+                andyStage,
                 menu1Stage)
                 .handle(
                         (notUsed, throwable) -> {
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                             }
 
                             try {
-//                                andyRenderable = andyStage.get();
+                                andyRenderable = andyStage.get();
                                 menu1Renderable = menu1Stage.get();
 
                                 // Everything finished loading successfully.
@@ -84,15 +84,15 @@ public class MainActivity extends AppCompatActivity {
                             return null;
                         });
 
-        ModelRenderable.builder()
-                .setSource(this, R.raw.andy)
-                .build()
-                .thenAccept(renderable -> andyRenderable = renderable)
-                .exceptionally(
-                        throwable -> {
-                            Log.e(TAG, "Unable to load Renderable.", throwable);
-                            return null;
-                        });
+//        ModelRenderable.builder()
+//                .setSource(this, R.raw.andy)
+//                .build()
+//                .thenAccept(renderable -> andyRenderable = renderable)
+//                .exceptionally(
+//                        throwable -> {
+//                            Log.e(TAG, "Unable to load Renderable.", throwable);
+//                            return null;
+//                        });
 
         arFragment.setOnTapArPlaneListener(
                 (HitResult hitResult, Plane plane, MotionEvent motionEvent) -> {
