@@ -42,7 +42,7 @@
 
         <TextView
             android:id="@+id/productName"
-            android:layout_width="125dp"
+            android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_marginStart="2dp"
             android:lines="2"
@@ -87,5 +87,16 @@
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <com.like.LikeButton
+        android:id="@+id/star_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        app:icon_size="10dp"
+        app:icon_type="heart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
