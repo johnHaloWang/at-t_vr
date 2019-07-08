@@ -2,4 +2,6 @@
     <string name="app_name">Menu4</string>
     <string name="obj1_name">Stylish Top Hat \n Unisex Fashion Item</string>
     <string name="obj1_price">$30</string>
+    <string name="addToCart_button">Add to Cart</string>
+    <string name="buyNow_button">Buy now</string>
 </resources>

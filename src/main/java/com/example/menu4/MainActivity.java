@@ -145,14 +145,14 @@ public class MainActivity extends AppCompatActivity {
         Node obj1 = new Node();
         obj1.setParent(center);
         obj1.setRenderable(tophatRenderable);
-        obj1.setLocalPosition(new Vector3(0.0f, 0.25f, 0.0f));
+        obj1.setLocalPosition(new Vector3(0.0f, 0.5f, 0.0f));
         obj1.setLocalScale(new Vector3(0.5f, 0.5f, 0.5f));
         // might use setLocalScale, or just use transformablenode for obj
 
         Node menu1 = new Node();
         menu1.setParent(center);
         menu1.setRenderable(menu1Renderable);
-        menu1.setLocalPosition(new Vector3(0.0f, -0.25f, 0.0f));
+        menu1.setLocalPosition(new Vector3(0.0f, -0.3f, 0.0f));
 
         // listener to seekbar
 //        View solarControlsView = menu1Renderable.getView();
