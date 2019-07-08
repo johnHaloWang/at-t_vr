@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Menu4</string>
+    <string name="obj1_name">Stylish Top Hat \n Unisex Fashion Item</string>
+    <string name="obj1_price">$30</string>
 </resources>
